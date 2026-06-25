@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express"); //requiring the express
 const app = express(); //This creates an Express application object.
-const port = 8080;
+const port = process.env.PORT || 8080;
 const cors = require("cors");
 const secret_cookie_parser = process.env.SECRET;
 const secret_session = process.env.SESSION_SECRET;
@@ -17,7 +17,7 @@ const mainRouter = require("./routes/mainRouter.js");
 
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
-const {MongoStore} = require("connect-mongo");
+const { MongoStore } = require("connect-mongo");
 
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
@@ -79,14 +79,17 @@ const sessionOptions = {
   store,
   secret: secret_session,
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   cookie: {
     expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
+    secure: true,
+    sameSite : "none"
   },
 };
 
+app.set("trust proxy", 1);
 app.use(session(sessionOptions)); //this is for establishing a session
 app.use(passport.initialize()); //initializes
 app.use(passport.session());
