@@ -1,0 +1,295 @@
+.house-outer-box {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 1rem 3rem;
+  gap: 2rem;
+}
+
+.house-page {
+  width: min(1180px, 100%);
+}
+
+.house-back-btn {
+  border: none;
+  background: transparent;
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.house-hero {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.house-label {
+  color: #65000b;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  margin-bottom: 0.8rem;
+}
+
+.house-hero h1 {
+  color: #171717;
+  font-size: clamp(2.3rem, 6vw, 5rem);
+  font-weight: 600;
+  line-height: 1;
+  margin: 0;
+}
+
+.house-location {
+  color: #666;
+  font-size: 1.25rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.house-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.house-highlights span {
+  background: #fff;
+  border: 1px solid #e7e7e7;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.house-image-wrap {
+  height: 470px;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.14);
+}
+
+.house-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.house-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 370px;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.house-main,
+.house-booking-card {
+  background: #fff;
+  border: 1px solid #e9e9e9;
+  border-radius: 1rem;
+}
+
+.house-main {
+  padding: 2rem;
+}
+
+.house-section {
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #ececec;
+}
+
+.house-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.house-section h2 {
+  font-size: 1.45rem;
+  margin: 0 0 1rem;
+  color: #171717;
+}
+
+.house-section p {
+  color: #555;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.house-amenities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.house-amenities div {
+  background: #fafafa;
+  border: 1px solid #eeeeee;
+  border-radius: 0.8rem;
+  padding: 1rem;
+}
+
+.house-amenities strong,
+.house-host strong {
+  display: block;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+.house-amenities span,
+.house-host span {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.house-host {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.house-host-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: #65000b;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.house-booking-card {
+  padding: 1.3rem;
+  position: sticky;
+  top: 6rem;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.08);
+}
+
+.house-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.house-price-row h3 {
+  font-size: 2rem;
+  margin: 0;
+  color: #171717;
+}
+
+.house-price-row span {
+  color: #666;
+}
+
+.house-booking-box {
+  border: 1px solid #dcdcdc;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.house-booking-box div {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.house-booking-box div:last-child {
+  border-bottom: none;
+}
+
+.house-booking-box label {
+  display: block;
+  color: #222;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0.2rem;
+}
+
+.house-booking-box span {
+  color: #777;
+}
+
+.house-note {
+  text-align: center;
+  color: #777;
+  font-size: 0.9rem;
+  margin: 0.9rem 0 1.2rem;
+}
+
+.house-total {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ececec;
+  padding-top: 1rem;
+  color: #222;
+}
+
+.house-actions {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.house-actions button {
+  flex: 1;
+  text-transform: none;
+}
+
+@media (max-width: 900px) {
+  .house-hero,
+  .house-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .house-image-wrap {
+    height: 330px;
+  }
+
+  .house-booking-card {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .house-outer-box {
+    padding: 5rem 0.8rem 2rem;
+  }
+
+  .house-main,
+  .house-booking-card {
+    border-radius: 0.8rem;
+  }
+
+  .house-main {
+    padding: 1.2rem;
+  }
+
+  .house-image-wrap {
+    height: 240px;
+  }
+
+  .house-amenities {
+    grid-template-columns: 1fr;
+  }
+
+  .house-actions {
+    flex-direction: column;
+  }
+}

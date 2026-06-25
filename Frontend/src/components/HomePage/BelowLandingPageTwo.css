@@ -1,0 +1,10 @@
+.below-landingpage-two {
+    width: 100%;
+    height: 60vh;
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    background: #E5E4E2;
+}

@@ -1,0 +1,191 @@
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #171717;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7rem 1rem 8rem;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(23, 23, 23, 0.78), rgba(23, 23, 23, 0.28)),
+    linear-gradient(180deg, rgba(23, 23, 23, 0.35), rgba(23, 23, 23, 0.82));
+  z-index: 1;
+}
+
+.landing-nav {
+  width: min(1440px, calc(100% - 2rem));
+  height: 4.2rem;
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.landing-brand {
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.landing-brand:hover,
+.landing-brand:focus {
+  color: #fff;
+}
+
+.landing-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-content {
+  width: min(1440px, 100%);
+  position: relative;
+  z-index: 2;
+  color: #fff;
+}
+
+.hero-label {
+  color: #f3d9dc;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  margin: 0 0 1rem;
+}
+
+.hero-content h1 {
+  max-width: 780px;
+  font-size: clamp(3.4rem, 8vw, 7.5rem);
+  line-height: 0.92;
+  font-weight: 650;
+  letter-spacing: 0;
+  margin: 0;
+}
+
+.hero-subtitle {
+  max-width: 560px;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin: 1.4rem 0 0;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+
+.hero-bottom-bar {
+  width: min(1440px, calc(100% - 2rem));
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.hero-bottom-bar div {
+  padding: 0.4rem 0.8rem;
+  border-right: 1px solid #e6e6e6;
+}
+
+.hero-bottom-bar div:last-child {
+  border-right: none;
+}
+
+.hero-bottom-bar strong {
+  color: #171717;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.hero-bottom-bar span {
+  color: #666;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    padding: 6rem 1rem 2rem;
+    min-height: 100vh;
+    align-items: flex-start;
+  }
+
+  .landing-nav {
+    width: calc(100% - 1.6rem);
+  }
+
+  .landing-brand {
+    font-size: 1.7rem;
+  }
+
+  .hero-content {
+    margin-top: 4rem;
+  }
+
+  .hero-bottom-bar {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    width: 100%;
+    grid-template-columns: 1fr;
+    margin-top: 3rem;
+  }
+
+  .hero-bottom-bar div {
+    border-right: none;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  .hero-bottom-bar div:last-child {
+    border-bottom: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .landing-actions {
+    gap: 0.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
