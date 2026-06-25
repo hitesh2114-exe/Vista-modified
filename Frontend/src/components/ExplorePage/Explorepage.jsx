@@ -14,7 +14,7 @@ function Explorepage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/listing/all")
+      .get("https://vista-modified-1.onrender.com/listing/all")
       .then((response) => {
         setHouse(response.data);
       })

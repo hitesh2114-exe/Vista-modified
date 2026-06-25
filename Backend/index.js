@@ -43,7 +43,7 @@ e.g. 'username=Hitesh&email=hitesh@gmail.com'  converts to
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://vista-modified-frontend.onrender.com/",
     credentials: true,
   })
 );

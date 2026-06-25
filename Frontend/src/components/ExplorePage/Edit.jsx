@@ -61,7 +61,7 @@ function Edit() {
     e.preventDefault();
 
     try {
-      await axios.put("http://localhost:8080/listing/update", formData, {
+      await axios.put("https://vista-modified-1.onrender.com/listing/update", formData, {
         withCredentials: true,
       });
       navigate(`/house/${home._id}`);

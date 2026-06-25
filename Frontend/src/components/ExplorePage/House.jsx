@@ -25,7 +25,7 @@ function House() {
 
   const fetchListing = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/listing/${id}`);
+      const response = await axios.get(`https://vista-modified-1.onrender.com/listing/${id}`);
       setHome(response.data);
     } catch (error) {
       console.error(error);
@@ -35,7 +35,7 @@ function House() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/me", {
+        const response = await axios.get("https://vista-modified-1.onrender.com/me", {
           withCredentials: true,
         });
 
@@ -68,7 +68,7 @@ function House() {
   const handleDelete = async () => {
     try {
       const response = await axios.delete(
-        `http://localhost:8080/listing/delete/${home._id}`
+        `https://vista-modified-1.onrender.com/listing/delete/${home._id}`
       );
       console.log(response);
       navigate("/explore-page");

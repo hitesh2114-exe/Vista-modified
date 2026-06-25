@@ -29,7 +29,7 @@ function Logout({ onClose, setUser }) {
 
   const handleLogOut = async () => {
     try {
-      const response = await axios.get(`http://localhost:8080/logout`, {
+      const response = await axios.get(`https://vista-modified-1.onrender.com/logout`, {
         withCredentials: true,
       });
       console.log(response.data);

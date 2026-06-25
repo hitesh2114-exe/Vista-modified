@@ -30,7 +30,7 @@ function LandingPage() {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get("http://localhost:8080/me", {
+        const response = await axios.get("https://vista-modified-1.onrender.com/me", {
           withCredentials: true,
         });
 
