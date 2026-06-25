@@ -17,7 +17,7 @@ function ForUSA() {
 
   useEffect(() => {
     axios
-      .get("https://vista-modified-1.onrender.com/all")
+      .get("https://vista-modified-1.onrender.com/listing/all")
       .then((response) => {
         setHouse(response.data);
       })
