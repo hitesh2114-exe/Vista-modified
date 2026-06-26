@@ -28,6 +28,7 @@ const signUp = async (req, res, next) => {
 
 const login = async (req, res) => {
   try {
+    console.log("login working")
     console.log("User after login:", req.user);
     res.status(200).json({
       success: true,
@@ -68,20 +69,20 @@ const logout = (req, res, next) => {
 
 const currentUser = (req, res) => {
   if (req.isAuthenticated()) {
-    console.log("user is authenticated")
+    console.log("isAuthenticated() working");
     console.log(req.headers.cookie);
     console.log(req.session);
     console.log(req.user);
     return res.status(200).json({
       loggedIn: true,
       user: req.user,
-      message : "above is the current user"
+      message: "above is the current user",
     });
   }
 
   return res.status(401).json({
     loggedIn: false,
-    message : "there is some error in /me route"
+    message: "there is some error in /me route",
   });
 };
 

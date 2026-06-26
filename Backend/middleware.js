@@ -3,6 +3,7 @@ const passport = require("passport");
 const isLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) {
     //this is function of passport.js to check the authentication of user
+    console.log("isLoggedIn working");
     return next();
   }
   res.status(401).json({
@@ -28,6 +29,7 @@ const loginAuth = (req, res, next) => {
       });
     }
 
+    console.log("loginAuth working");
     // Establish login session
     req.login(user, (err) => {
       if (err) {
