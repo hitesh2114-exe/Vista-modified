@@ -71,6 +71,7 @@ const currentUser = (req, res) => {
     return res.status(200).json({
       loggedIn: true,
       user: req.user,
+      message : "above is the current user"
     });
   }
 
