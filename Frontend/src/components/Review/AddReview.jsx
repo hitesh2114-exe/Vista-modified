@@ -22,7 +22,7 @@ function AddReview({ refreshListing }) {
     e.preventDefault();
 
     try {
-      await axios.post(`http://localhost:8080/listing/${id}/review`, formData, {
+      await axios.post(`https://vista-modified-1.onrender.com/listing/${id}/review`, formData, {
         withCredentials: true,
       });
       refreshListing();
