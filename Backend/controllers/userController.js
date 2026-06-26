@@ -76,6 +76,7 @@ const currentUser = (req, res) => {
 
   return res.status(401).json({
     loggedIn: false,
+    message : "there is some error in /me route"
   });
 };
 
