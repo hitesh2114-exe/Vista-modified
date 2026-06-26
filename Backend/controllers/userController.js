@@ -68,6 +68,7 @@ const logout = (req, res, next) => {
 
 const currentUser = (req, res) => {
   if (req.isAuthenticated()) {
+    console.log("user is authenticated")
     return res.status(200).json({
       loggedIn: true,
       user: req.user,
