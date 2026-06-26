@@ -79,17 +79,14 @@ const sessionOptions = {
   store,
   secret: secret_session,
   resave: false,
-  saveUninitialized: false,
+  saveUninitialized: true,
   cookie: {
     expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
     maxAge: 7 * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    secure: true,
-    sameSite : "none"
   },
 };
 
-app.set("trust proxy", 1);
 app.use(session(sessionOptions)); //this is for establishing a session
 app.use(passport.initialize()); //initializes
 app.use(passport.session());
