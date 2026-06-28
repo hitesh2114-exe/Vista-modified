@@ -17,7 +17,9 @@ function ForCanada() {
 
   useEffect(() => {
     axios
-      .get("https://vista-modified-1.onrender.com/listing/all")
+      .get("https://vista-modified-1.onrender.com/listing/all", {
+        withCredentials: true,
+      })
       .then((response) => {
         setHouse(response.data);
       })
@@ -63,7 +65,9 @@ function ForCanada() {
             }}
           >
             Explore stays
-            <ArrowForwardIcon sx={{ marginLeft: "0.45rem", fontSize: "1.1rem" }} />
+            <ArrowForwardIcon
+              sx={{ marginLeft: "0.45rem", fontSize: "1.1rem" }}
+            />
           </Button>
         </div>
 
@@ -90,7 +94,9 @@ function ForCanada() {
                 <SwiperSlide key={item._id}>
                   <article
                     className="canada-card"
-                    onClick={() => navigate(`/house/${item._id}`, { state: item })}
+                    onClick={() =>
+                      navigate(`/house/${item._id}`, { state: item })
+                    }
                   >
                     <div className="canada-image-wrap">
                       <img src={item?.image?.url} alt={item.title} />
@@ -136,7 +142,9 @@ function ForCanada() {
             }}
           >
             Discover your next stay
-            <ArrowForwardIcon sx={{ marginLeft: "0.45rem", fontSize: "1.1rem" }} />
+            <ArrowForwardIcon
+              sx={{ marginLeft: "0.45rem", fontSize: "1.1rem" }}
+            />
           </Button>
         </div>
       </div>

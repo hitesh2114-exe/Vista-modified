@@ -9,9 +9,11 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function AddHome() {
   const navigate = useNavigate();
+  const location = useLocation();
 
   const [formData, setFormData] = useState({
     title: "",
@@ -100,7 +102,20 @@ function AddHome() {
           sx={{ position: "absolute", top: "5rem", left: "39%", zIndex: "1" }}
         >
           You need to login first! Click here to{" "}
-          <Link to={`/login`} style={{textDecoration : "none"}}>Login</Link>
+          <Link
+            to={`/login`}
+            style={{ textDecoration: "none" }}
+            onClick={() => {
+              if (location.pathname !== "/login") {
+                localStorage.setItem(
+                  "postLoginRedirect",
+                  location.pathname + location.search
+                );
+              }
+            }}
+          >
+            Login
+          </Link>
         </Alert>
       )}
 

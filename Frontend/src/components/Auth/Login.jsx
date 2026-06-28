@@ -12,6 +12,7 @@ import axios from "axios";
 function Login() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
+  const redirectPath = localStorage.getItem("postLoginRedirect") || "/";
 
   const [formData, setFormData] = useState({
     username: "",
@@ -41,7 +42,8 @@ function Login() {
       console.log(response.data);
 
       if (response.data.success) {
-        navigate(`/`);
+        localStorage.removeItem("postLoginRedirect");
+        navigate(redirectPath);
       }
     } catch (error) {
       // console.error(error);

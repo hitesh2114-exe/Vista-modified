@@ -7,9 +7,11 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function AddReview({ refreshListing }) {
   const { id } = useParams();
+  const location = useLocation();
 
   const [formData, setFormData] = useState({
     comment: "",
@@ -22,9 +24,13 @@ function AddReview({ refreshListing }) {
     e.preventDefault();
 
     try {
-      await axios.post(`https://vista-modified-1.onrender.com/listing/${id}/review`, formData, {
-        withCredentials: true,
-      });
+      await axios.post(
+        `https://vista-modified-1.onrender.com/listing/${id}/review`,
+        formData,
+        {
+          withCredentials: true,
+        }
+      );
       refreshListing();
 
       setFormData({
@@ -48,7 +54,18 @@ function AddReview({ refreshListing }) {
           sx={{ position: "absolute", marginTop: "2rem" }}
         >
           You need to login first! Click here to{" "}
-          <Link to={`/login`} style={{ textDecoration: "none" }}>
+          <Link
+            to={`/login`}
+            style={{ textDecoration: "none" }}
+            onClick={() => {
+              if (location.pathname !== "/login") {
+                localStorage.setItem(
+                  "postLoginRedirect",
+                  location.pathname + location.search
+                );
+              }
+            }}
+          >
             Login
           </Link>
         </Alert>
